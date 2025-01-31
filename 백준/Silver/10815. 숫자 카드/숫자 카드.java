@@ -2,20 +2,17 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int[] arr = new int[N];
-        for (int i = 0; i < N; i++) {
-            arr[i] = sc.nextInt();    
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        HashSet set = new HashSet();
+        for (int i = 0; i < n; ++i) {
+            set.add(scanner.nextInt());
         }
-        Arrays.sort(arr);
-        int M = sc.nextInt();
+        int m = scanner.nextInt();
+
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < M; i++) {
-            int findVal = sc.nextInt();
-            boolean isFound = Arrays.binarySearch(arr, findVal) >= 0;
-            sb.append((isFound? 1 : 0));
-            sb.append(" ");
+        for (int i = 0; i < m; ++i) {
+            sb.append((set.contains(scanner.nextInt()) ? "1 ": "0 "));
         }
         System.out.println(sb.toString());
     }
